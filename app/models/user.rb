@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+ has_many :contacts
+
+
  acts_as_token_authenticatable
 
   # Include default devise modules. Others available are:
@@ -6,5 +9,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :contacts 
 end
