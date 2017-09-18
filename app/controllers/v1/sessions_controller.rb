@@ -4,7 +4,7 @@ class V1::SessionsController < ApplicationController
  end
 
  def create
-  user = User.where(email: params[:email]).first
+  @user = User.where(email: params[:email]).first
 
   if @user&.valid_password?(params[:password])
    render :create, status: :created
