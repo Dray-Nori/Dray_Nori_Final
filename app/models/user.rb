@@ -9,6 +9,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 has_many :accounts, foreign_key: :owner_id
-
-has_many :contacts
 end
